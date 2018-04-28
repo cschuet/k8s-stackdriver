@@ -37,6 +37,10 @@ import (
 )
 
 var (
+	project    = flag.String("GCP project", "robco-cartograper", "")
+	zone       = flag.String("GCP zone", "europe-west1-c", "")
+	cluster    = flag.String("GCP cluster", "cloud-robotics", "")
+	instance   = flag.String("GCP instance", "gke-cloud-robotics-default-pool-23baaff6-qr58.c.robco-cartographer.internal", "")
 	host       = flag.String("target-host", "localhost", "The monitored component's hostname. DEPRECATED: Use --source instead.")
 	port       = flag.Uint("target-port", 80, "The monitored component's port. DEPRECATED: Use --source instead.")
 	component  = flag.String("component", "", "The monitored target's name. DEPRECATED: Use --source instead.")
@@ -73,7 +77,14 @@ func main() {
 
 	sourceConfigs := config.SourceConfigsFromFlags(source, component, host, port, whitelisted)
 
-	gceConf, err := config.GetGceConfig(*metricsPrefix)
+	/* gceConf, err := config.GetGceConfig(*metricsPrefix) */
+	gceConf = return &config.GceConfig{
+		Project: project,
+		Zone: zone,
+		Cluster: cluster,
+		Instance: instance,
+		MetricsPrefix: metricsPrefix,
+	}
 	podConfig := &config.PodConfig{
 		PodId:       *podId,
 		NamespaceId: *namespaceId,
