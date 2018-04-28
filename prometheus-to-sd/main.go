@@ -79,18 +79,15 @@ func main() {
 
 	/* gceConf, err := config.GetGceConfig(*metricsPrefix) */
 	gceConf := &config.GceConfig{
-		Project: project,
-		Zone: zone,
-		Cluster: cluster,
-		Instance: instance,
-		MetricsPrefix: metricsPrefix,
+		Project: *project,
+		Zone: *zone,
+		Cluster: *cluster,
+		Instance: *instance,
+		MetricsPrefix: *metricsPrefix,
 	}
 	podConfig := &config.PodConfig{
 		PodId:       *podId,
 		NamespaceId: *namespaceId,
-	}
-	if err != nil {
-		glog.Fatalf("Failed to get GCE config: %v", err)
 	}
 	glog.Infof("GCE config: %+v", gceConf)
 
