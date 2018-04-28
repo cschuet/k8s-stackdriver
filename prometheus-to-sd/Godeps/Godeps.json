@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/GoogleCloudPlatform/k8s-stackdriver/prometheus-to-sd",
+	"ImportPath": "github.com/cschuet/k8s-stackdriver/prometheus-to-sd",
 	"GoVersion": "go1.9",
 	"GodepVersion": "v79",
 	"Packages": [

@@ -25,7 +25,7 @@ import (
 	dto "github.com/prometheus/client_model/go"
 	"github.com/prometheus/common/expfmt"
 
-	"github.com/GoogleCloudPlatform/k8s-stackdriver/prometheus-to-sd/config"
+	"github.com/cschuet/k8s-stackdriver/prometheus-to-sd/config"
 )
 
 // GetPrometheusMetrics scrapes metrics from the given host and port using /metrics handler.

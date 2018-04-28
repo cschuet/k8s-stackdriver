@@ -21,7 +21,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/GoogleCloudPlatform/k8s-stackdriver/prometheus-to-sd/config"
+	"github.com/cschuet/k8s-stackdriver/prometheus-to-sd/config"
 )
 
 func TestGetMetricType(t *testing.T) {
