@@ -78,7 +78,7 @@ func main() {
 	sourceConfigs := config.SourceConfigsFromFlags(source, component, host, port, whitelisted)
 
 	/* gceConf, err := config.GetGceConfig(*metricsPrefix) */
-	gceConf = return &config.GceConfig{
+	gceConf := &config.GceConfig{
 		Project: project,
 		Zone: zone,
 		Cluster: cluster,
